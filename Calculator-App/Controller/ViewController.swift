@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayLabel: UILabel!
     
     private var isFinishedEditingNumber: Bool = true
-    
+     
     private var displayValue: Double {
         get{
             guard let number = Double(displayLabel.text!) else {
@@ -25,14 +25,16 @@ class ViewController: UIViewController {
         }
     }
     
+    private var calculator = CalculatorLogic()
+    
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         if let mathOperation = sender.currentTitle {
-            let calculator = CalculatorLogic(number: displayValue)
+            calculator.setNumber(displayValue)
             
             guard let result = calculator.calculate(mathOperation: mathOperation) else {
                 fatalError("The Result of the Calculation is nil")
             }
-            displayValue = result 
+            displayValue = result
         }
     }
     
