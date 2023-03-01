@@ -27,17 +27,12 @@ class ViewController: UIViewController {
     
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         if let mathOperation = sender.currentTitle {
-            switch mathOperation {
-            case "AC":
-                displayValue = 0
-                isFinishedEditingNumber = true
-            case "+ / -":
-                displayValue *= -1
-            case "%":
-                displayValue *= 0.01
-            default:
-                displayLabel.text = "Unexpected Error"
+            let calculator = CalculatorLogic(number: displayValue)
+            
+            guard let result = calculator.calculate(mathOperation: mathOperation) else {
+                fatalError("The Result of the Calculation is nil")
             }
+            displayValue = result 
         }
     }
     
