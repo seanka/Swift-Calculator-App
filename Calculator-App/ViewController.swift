@@ -11,9 +11,26 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var displayLabel: UILabel!
     
-    var isFinishedEditingNumber: Bool = true
+    private var isFinishedEditingNumber: Bool = true
     
     @IBAction func calcButtonPressed(_ sender: UIButton) {
+        guard let number = Double(displayLabel.text!) else {
+            fatalError("Could not convert display text into Double")
+        }
+        
+        if let mathOperation = sender.currentTitle {
+            switch mathOperation {
+            case "AC":
+                displayLabel.text = "0"
+                isFinishedEditingNumber = true
+            case "+ / -":
+                displayLabel.text = String(number * -1)
+            case "%":
+                displayLabel.text = String(number * 0.01)
+            default:
+                displayLabel.text = "Unexpected Error"
+            }
+        }
     }
     
     @IBAction func numButtonPressed(_ sender: UIButton) {
