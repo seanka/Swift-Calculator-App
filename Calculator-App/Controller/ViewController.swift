@@ -8,11 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var displayLabel: UILabel!
     
     private var isFinishedEditingNumber: Bool = true
-     
+    
     private var displayValue: Double {
         get{
             guard let number = Double(displayLabel.text!) else {
@@ -31,17 +31,16 @@ class ViewController: UIViewController {
         if let mathOperation = sender.currentTitle {
             calculator.setNumber(displayValue)
             
-            guard let result = calculator.calculate(mathOperation: mathOperation) else {
-                fatalError("The Result of the Calculation is nil")
+            if let result = calculator.calculate(mathOperation: mathOperation) else {
+                displayValue = result
             }
-            displayValue = result
         }
     }
     
     @IBAction func numButtonPressed(_ sender: UIButton) {
         
         if let numValue = sender.currentTitle {
-             
+            
             if isFinishedEditingNumber {
                 displayLabel.text = numValue
                 isFinishedEditingNumber = false
