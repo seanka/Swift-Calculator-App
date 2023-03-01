@@ -71,14 +71,14 @@
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="÷">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="efg-nM-hdE">
-                                        <rect key="frame" x="0.0" y="253.33333333333329" width="393" height="125.66666666666671"/>
+                                        <rect key="frame" x="0.0" y="253.33333333333329" width="393" height="125.66666666666666"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkk-Ru-UUU">
                                                 <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="125.66666666666667"/>
@@ -112,14 +112,14 @@
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="✕">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="BUz-bv-oEq">
-                                        <rect key="frame" x="0.0" y="380" width="393" height="125.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="380" width="393" height="125.66666666666669"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4V-Lh-FpK">
                                                 <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="125.66666666666667"/>
@@ -153,7 +153,7 @@
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="-">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                             </button>
