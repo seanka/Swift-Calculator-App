@@ -13,20 +13,28 @@ class ViewController: UIViewController {
     
     private var isFinishedEditingNumber: Bool = true
     
-    @IBAction func calcButtonPressed(_ sender: UIButton) {
-        guard let number = Double(displayLabel.text!) else {
-            fatalError("Could not convert display text into Double")
+    private var displayValue: Double {
+        get{
+            guard let number = Double(displayLabel.text!) else {
+                fatalError("Could not convert display text into Double")
+            }
+            return number
         }
-        
+        set{
+            displayLabel.text = String(newValue)
+        }
+    }
+    
+    @IBAction func calcButtonPressed(_ sender: UIButton) {
         if let mathOperation = sender.currentTitle {
             switch mathOperation {
             case "AC":
-                displayLabel.text = "0"
+                displayValue = 0
                 isFinishedEditingNumber = true
             case "+ / -":
-                displayLabel.text = String(number * -1)
+                displayValue *= -1
             case "%":
-                displayLabel.text = String(number * 0.01)
+                displayValue *= 0.01
             default:
                 displayLabel.text = "Unexpected Error"
             }
@@ -34,19 +42,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func numButtonPressed(_ sender: UIButton) {
+        
         if let numValue = sender.currentTitle {
              
             if isFinishedEditingNumber {
                 displayLabel.text = numValue
                 isFinishedEditingNumber = false
             } else {
-                
                 if numValue == "." {
-                    guard let currentDisplayValue = Double(displayLabel.text!) else {
-                        fatalError("Could not convert display text into Double")
-                    }
-                    
-                    let isInt = floor(currentDisplayValue) == currentDisplayValue
+                    let isInt = floor(displayValue) == displayValue
                     
                     if !isInt {
                         return
