@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         if let mathOperation = sender.currentTitle {
             calculator.setNumber(displayValue)
             
-            if let result = calculator.calculate(mathOperation: mathOperation) else {
+            if let result = calculator.calculate(mathOperation: mathOperation) {
                 displayValue = result
             }
         }
