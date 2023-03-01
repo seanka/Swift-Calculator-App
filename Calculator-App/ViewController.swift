@@ -35,11 +35,24 @@ class ViewController: UIViewController {
     
     @IBAction func numButtonPressed(_ sender: UIButton) {
         if let numValue = sender.currentTitle {
-            
+             
             if isFinishedEditingNumber {
                 displayLabel.text = numValue
                 isFinishedEditingNumber = false
             } else {
+                
+                if numValue == "." {
+                    guard let currentDisplayValue = Double(displayLabel.text!) else {
+                        fatalError("Could not convert display text into Double")
+                    }
+                    
+                    let isInt = floor(currentDisplayValue) == currentDisplayValue
+                    
+                    if !isInt {
+                        return
+                    }
+                }
+                
                 displayLabel.text = displayLabel.text! + numValue
             }
             
